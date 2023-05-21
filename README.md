@@ -126,7 +126,7 @@ const lensFlareProps = useControls({
 | :-------------- | :-------------------------------- |
 | colorGain       | Only accecpts RGB color format    |
 | followMouse     | Can't work with occlusion         |
-| anamorphic      | You need to tung of animation     |
+| anamorphic      | You should turn animation off     |
 | dirtTextureFile | Can be changed to another texture |
 
 # Ignoring occlusion on some objects
