@@ -52,7 +52,7 @@ h3 {
   color: white;
 }
 
-h2 {
+h2 > a {
   font-family: 'Roboto', sans-serif;
   position: absolute;
   top: 5%;
@@ -63,4 +63,13 @@ h2 {
   user-select: none;
   pointer-events: none;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.4s ease-in-out;
+}
+
+h2 > a:hover {
+  color: white;
 }
