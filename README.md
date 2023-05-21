@@ -8,7 +8,7 @@ Ultimate Lens flare adds the optical aberration caused by the dispersion of ligh
 
 [![screenshot](thumbnail.png)](https://ultimate-lens-flare.vercel.app)
 
-[Click here to see an example](https://codesandbox.io/s/anderson-mancini-lens-flare-simple-example-ox6611?file=/src/App.js)
+[Click here to see an example](https://ultimate-lens-flare.vercel.app)
 
 This captivating phenomenon creates a stunning optical effect that adds a touch of enchantment to your r3f projects, especially for sun lights. Ultimate Lens Flare creates mesmerizing circular or hexagonal bursts of light. Embrace the magic and elevate your projects with this unique and alluring effect. This captivating optical innovation introduces a new dimension to your content, amplifying its visual impact and captivating your audience.
 
