@@ -1,11 +1,12 @@
 import { Canvas } from '@react-three/fiber'
 import LensFlare from './effects/UltimateLensFlare'
-import { Environment, OrbitControls } from '@react-three/drei'
+import { Environment, Loader, OrbitControls } from '@react-three/drei'
 import Overlay from './components/Overlay'
 import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing'
 import { folder, useControls } from 'leva'
 import { Color } from 'three'
 import Scene from './components/Scene'
+import { Suspense } from 'react'
 
 export default function App() {
   const lensFlareProps = useControls({
@@ -53,10 +54,13 @@ export default function App() {
 
         <OrbitControls autoRotate autoRotateSpeed={0.3} zoomSpeed={4} maxDistance={60} />
         <directionalLight intensity={3} position={[-25, 60, -60]} />
-        <Environment files="/background.hdr" background />
 
-        <Scene />
+        <Suspense fallback={null}>
+          <Environment files="/background.hdr" background />
+          <Scene />
+        </Suspense>
       </Canvas>
+      <Loader />
       <Overlay />
     </>
   )
