@@ -1,6 +1,7 @@
 # ULTIMATE LENS FLARE FOR REACT THREE FIBER
 
-####by Anderson Mancini
+#### by Anderson Mancini
+
 [![twitter](https://flat.badgen.net/badge/twitter/@Andersonmancini/?icon&label)](https://twitter.com/Andersonmancini)
 
 Ultimate Lens flare adds the optical aberration caused by the dispersion of light entering the lens through its edges.
@@ -13,7 +14,7 @@ This captivating phenomenon creates a stunning optical effect that adds a touch 
 
 Unlock a world of possibilities with Ultimate Lens Flare's intuitive interface. Seamlessly adjust parameters such as brightness, star points, glare size, ghosts, burst and much more, while real-time previews allow you to see the impact of your adjustments instantly. Embrace your creativity and effortlessly bring your artistic vision to life.
 
-##More demos on CodeSandbox
+## More demos on CodeSandbox
 
 - [Ultimate Lens Flare with class text](https://codesandbox.io/s/anderson-mancini-lens-flare-glass-text-example-9elqmx)
 
@@ -22,10 +23,10 @@ Unlock a world of possibilities with Ultimate Lens Flare's intuitive interface. 
 - [Ultimate Lens Flare multiple materials example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-materials-example-4gjc16)
 - [Ultimate Lens Flare StarWars Ship example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-starwars-example-qmpuj1)
 
-###Customization options
-Here you can watch a video of customization options. You can fully customize it
+### Customization options
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/a4W4SUZ5uu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Here you can watch a video of customization options. You can fully customize it
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/a4W4SUZ5uu8/0.jpg)](https://www.youtube.com/watch?v=a4W4SUZ5uu8)
 
 # HOW TO USE?
 
