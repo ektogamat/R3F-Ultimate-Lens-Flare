@@ -199,13 +199,13 @@ Hard to remember everything I read to achieve this, but here's a list of resourc
 
 Here is some of the many friends that helped me to achieve this effect:
 
-- https://twitter.com/abernier_
-- https://twitter.com/MaximeHeckel
 - https://twitter.com/0xca0a
+- https://github.com/abernier
 - https://twitter.com/N8Programs
+- https://twitter.com/MaximeHeckel
+- https://twitter.com/spidersharma
 - https://twitter.com/vis_prime
 - https://twitter.com/Cody_J_Bennett
-- https://twitter.com/spidersharma
 - https://twitter.com/0beqz
 - https://twitter.com/maya_ndljk
 - https://twitter.com/bruno_simon

@@ -1,6 +1,6 @@
 // Created by Anderson Mancini 2023
-// React Three Fiber LensFlare kJhgonent to be used
-// as an Effect together with react-three/postprocessing
+// React Three Fiber Ultimate LensFlare
+// To be used Effect together with react-three/postprocessing
 
 import { Uniform, Color, Vector3 } from 'three'
 import { BlendFunction, Effect } from 'postprocessing'
