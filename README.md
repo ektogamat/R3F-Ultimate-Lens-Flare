@@ -14,10 +14,13 @@ This captivating phenomenon creates a stunning optical effect that adds a touch 
 Unlock a world of possibilities with Ultimate Lens Flare's intuitive interface. Seamlessly adjust parameters such as brightness, star points, glare size, ghosts, burst and much more, while real-time previews allow you to see the impact of your adjustments instantly. Embrace your creativity and effortlessly bring your artistic vision to life.
 
 ##More demos on CodeSandbox
-[Ultimate Lens Flare with class text](https://codesandbox.io/s/anderson-mancini-lens-flare-glass-text-example-9elqmx)
-[Ultimate Lens Flare simple example ](https://codesandbox.io/s/anderson-mancini-lens-flare-simple-example-ox6611)
-[Ultimate Lens Flare multiple materials example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-materials-example-4gjc16)
-[Ultimate Lens Flare StarWars Ship example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-starwars-example-qmpuj1)
+
+- [Ultimate Lens Flare with class text](https://codesandbox.io/s/anderson-mancini-lens-flare-glass-text-example-9elqmx)
+
+- [Ultimate Lens Flare simple example ](https://codesandbox.io/s/anderson-mancini-lens-flare-simple-example-ox6611)
+
+- [Ultimate Lens Flare multiple materials example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-materials-example-4gjc16)
+- [Ultimate Lens Flare StarWars Ship example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-starwars-example-qmpuj1)
 
 ###Customization options
 Here you can watch a video of customization options. You can fully customize it
@@ -177,19 +180,19 @@ Would be really appreciated if you are willing to give me a star here on GitHub 
 
 Hard to remember everything I read to achieve this, but here's a list of resources that have been helpful to me:
 
-https://www.shadertoy.com/view/4sK3W3
-https://www.shadertoy.com/view/4sX3Rs
-https://www.shadertoy.com/view/dllSRX
-https://www.shadertoy.com/view/Xlc3D2
-https://www.shadertoy.com/view/XtKfRV
-https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
-https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/
-https://docs.pmnd.rs/react-postprocessing/effects/custom-effects
-https://threejs.org/docs/index.html#manual/en/introduction/How-to-use-post-processing
-https://threejs.org/docs/index.html#manual/en/introduction/Matrix-transformations
-https://github.com/mrdoob/three.js/blob/master/examples/jsm/objects/Lensflare.js
-https://chat.openai.com/chat
-https://skybox.blockadelabs.com/
+- https://www.shadertoy.com/view/4sK3W3
+- https://www.shadertoy.com/view/4sX3Rs
+- https://www.shadertoy.com/view/dllSRX
+- https://www.shadertoy.com/view/Xlc3D2
+- https://www.shadertoy.com/view/XtKfRV
+- https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
+- https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/
+- https://docs.pmnd.rs/react-postprocessing/effects/custom-effects
+- https://threejs.org/docs/index.html#manual/en/introduction/How-to-use-post-processing
+- https://threejs.org/docs/index.html#manual/en/introduction/Matrix-transformations
+- https://github.com/mrdoob/three.js/blob/master/examples/jsm/objects/Lensflare.js
+- https://chat.openai.com/chat
+- https://skybox.blockadelabs.com/
 
 ### Special thanks
 
