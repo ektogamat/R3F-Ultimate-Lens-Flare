@@ -16,11 +16,14 @@ Unlock a world of possibilities with Ultimate Lens Flare's intuitive interface. 
 
 ## More demos on CodeSandbox
 
-- [Ultimate Lens Flare with class text](https://codesandbox.io/s/anderson-mancini-lens-flare-glass-text-example-9elqmx)
+- [Ultimate Lens Flare Text3D example](https://codesandbox.io/s/anderson-mancini-lens-flare-glass-text-example-9elqmx)
 
 - [Ultimate Lens Flare simple example ](https://codesandbox.io/s/anderson-mancini-lens-flare-simple-example-ox6611)
 
 - [Ultimate Lens Flare multiple materials example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-materials-example-4gjc16)
+
+- [Ultimate Lens Flare Glass Dome example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-glass-dome-gjl302)
+
 - [Ultimate Lens Flare StarWars Ship example ](https://codesandbox.io/s/anderson-mancini-lens-lensflare-starwars-example-qmpuj1)
 
 ### Customization options
@@ -55,7 +58,7 @@ You need to <strong>provide an image to act like a lens dirt filter</strong>. Id
 
 \*\*This is a mandatory parameter and it expects a path to find the file on your project. Don't need to load a texture using useTexture.
 
-###And you are done ✨
+### And you are done ✨
 
 ---
 
