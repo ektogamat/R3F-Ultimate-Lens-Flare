@@ -4,13 +4,13 @@
 
 [![twitter](https://flat.badgen.net/badge/twitter/@Andersonmancini/?icon&label)](https://twitter.com/Andersonmancini)
 
-Ultimate Lens flare adds the optical aberration caused by the dispersion of light entering the lens through its edges.
+A EffectComposer Effect for React Three Post Processing, `Ultimate Lens flare` adds the optical aberration caused by the dispersion of light entering the lens through its edges.
 
 [![screenshot](thumbnail.png)](https://ultimate-lens-flare.vercel.app)
 
 [Click here to see an example](https://ultimate-lens-flare.vercel.app)
 
-This captivating phenomenon creates a stunning optical effect that adds a touch of enchantment to your r3f projects, especially for sun lights. Ultimate Lens Flare creates mesmerizing circular or hexagonal bursts of light. Embrace the magic and elevate your projects with this unique and alluring effect. This captivating optical innovation introduces a new dimension to your content, amplifying its visual impact and captivating your audience.
+This captivating phenomenon creates a <strong>stunning optical effect</strong> that adds a touch of enchantment to your r3f projects, especially for sun lights. `Ultimate Lens Flare` creates mesmerizing circular or hexagonal bursts of light. Embrace the magic and elevate your projects with this unique and alluring effect. This captivating optical innovation introduces a new dimension to your content, amplifying its visual impact and captivating your audience.
 
 Unlock a world of possibilities with Ultimate Lens Flare's intuitive interface. Seamlessly adjust parameters such as brightness, star points, glare size, ghosts, burst and much more, while real-time previews allow you to see the impact of your adjustments instantly. Embrace your creativity and effortlessly bring your artistic vision to life.
 
@@ -41,18 +41,18 @@ Here you can watch a video of customization options. You can fully customize it
 
 ### 2. Import the component
 
-```
+```js
 import LensFlare from './UltimateLensFlare'
 // Remember to adjust the path to match your project's structure
 ```
 
 ### 3. Provide an image for the lens dirt as a prop and add this to your EffectComposer
 
-You need to <strong>provide an image to act like a lens dirt filter</strong>. Idealy it should be an image with 16:9 aspect ratio. This image needs to be small, since it will be processed by the shader. I'm giving an example in the public folder, but feel free to replace by any other image you want. Just remember to pass the file name as a "dirtTextureFile" prop like shown bellow.
+You need to <strong>provide an image to act like a lens dirt filter</strong>. To implement this, supply an image with a 16:9 aspect ratio as a `dirtTextureFile` prop. It's important to keep the image size small to ensure efficient shader processing. You can find an example image in the public folder, but feel free to substitute it with any image of your choice. Remember to pass the file name as the `dirtTextureFile` prop, as demonstrated below.
 
-```
+```js
 <EffectComposer>
-    <LensFlare dirtTextureFile={'/lensDirtTexture.png'} />
+  <LensFlare dirtTextureFile={'/lensDirtTexture.png'} />
 </EffectComposer>
 ```
 
@@ -64,9 +64,9 @@ You need to <strong>provide an image to act like a lens dirt filter</strong>. Id
 
 # Changing the Blend Mode
 
-`Ultimate Lens Flare` was created to be easy and simple to use. It uses a custom shader pass on Effect composer to read the scene and overlay it with your lens flare effect automatically.
+With the aim of simplicity and user-friendliness, `Ultimate Lens Flare` seamlessly integrates into your workflow. It employs a custom shader pass on Effect Composer to effortlessly apply the lens flare effect by overlaying it on the scene.
 
-However, you might want to tweak some things to match your needs. The main parameter you can change to affect the overal look of the effect is the `blendFunction`. By default, this will be set to <strong>BlendFunction.NORMAL</strong>, but you can change it by passing a different blending mode using the `blendFunction` prop:
+Nevertheless, you have the flexibility to customize the effect to suit your specific requirements. The primary parameter that influences the overall appearance of the effect is the <strong>`blendFunction`</strong>. By default, this parameter is set to <strong>BlendFunction.NORMAL</strong>. However, you can modify it by providing a different blending mode through the blendFunction prop:
 
 ```js
 <EffectComposer>
@@ -74,61 +74,70 @@ However, you might want to tweak some things to match your needs. The main param
 </EffectComposer>
 ```
 
-You can get pretty different and beautiful results using other Blend functions such as `BlendFunction.PIN_LIGHT`, `BlendFunction.OVERLAY`, `BlendFunction.PIN_MULTIPLY`, etc. Remember to import [using `import { BlendFunction } from 'postprocessing'` ] the BlendModes from post processing to use them.
+Unlock a world of stunning and diverse outcomes by exploring alternative Blend functions like `BlendFunction.PIN_LIGHT`, `BlendFunction.OVERLAY`, `BlendFunction.PIN_MULTIPLY`, and more. Import the BlendModes from post processing using `import { BlendFunction } from 'postprocessing'` to utilize these options. Prepare to be amazed by the myriad possibilities they offer.
 
 # Using LEVA to adjust the parameters
 
-For convenience, you can adjust a bunch of parameters inside the Ultimate Lens Flare. Just import `folder` and `useControls` from leva and then copy and paste these props to have an interface to play with the values. Once you are happy with the results, you can manually copy back all the values from the Leva controls to this `useControls` default value and save and you are done!
+Enjoy the convenience of fine-tuning various parameters within Ultimate Lens Flare. To simplify the process, import `folder` and `useControls` from `LEVA`. Copy and paste the following props to create an interactive interface for adjusting the values. Once you're satisfied with the results, manually transfer the values from the Leva controls back to the default value of useControls. Save your changes, and you're all set!
 
-```
+```js
 import { folder, useControls } from 'leva'
 ```
 
+```js
+const lensFlareProps = useControls({
+  LensFlare: folder(
+    {
+      enabled: { value: true, label: 'enabled?' },
+      opacity: { value: 1.0, min: 0.0, max: 1.0, label: 'opacity' },
+      position: { value: { x: -25, y: 6, z: -60 }, step: 1, label: 'position' },
+      glareSize: { value: 0.35, min: 0.01, max: 1.0, label: 'glareSize' },
+      starPoints: { value: 6.0, step: 1.0, min: 0, max: 32.0, label: 'starPoints' },
+      animated: { value: true, label: 'animated?' },
+      followMouse: { value: false, label: 'followMouse?' },
+      anamorphic: { value: false, label: 'anamorphic?' },
+      colorGain: { value: new Color(56, 22, 11), label: 'colorGain' },
+
+      Flare: folder({
+        flareSpeed: { value: 0.4, step: 0.001, min: 0.0, max: 1.0, label: 'flareSpeed' },
+        flareShape: { value: 0.1, step: 0.001, min: 0.0, max: 1.0, label: 'flareShape' },
+        flareSize: { value: 0.005, step: 0.001, min: 0.0, max: 0.01, label: 'flareSize' },
+      }),
+
+      SecondaryGhosts: folder({
+        secondaryGhosts: { value: true, label: 'secondaryGhosts?' },
+        ghostScale: { value: 0.1, min: 0.01, max: 1.0, label: 'ghostScale' },
+        aditionalStreaks: { value: true, label: 'aditionalStreaks?' },
+      }),
+
+      StartBurst: folder({
+        starBurst: { value: true, label: 'starBurst?' },
+        haloScale: { value: 0.5, step: 0.01, min: 0.3, max: 1.0 },
+      }),
+    },
+    { collapsed: true }
+  ),
+})
 ```
-  const lensFlareProps = useControls({
-    LensFlare: folder(
-      {
-        enabled: { value: true, label: 'enabled?' },
-        opacity: { value: 1.0, min: 0.0, max: 1.0, label: 'opacity' },
-        position: {value: { x: -25, y: 6, z: -60 }, step: 1, label: 'position'},
-        glareSize: { value: 0.35, min: 0.01, max: 1.0, label: 'glareSize'},
-        starPoints: { value: 6.0, step: 1.0, min: 0, max: 32.0, label: 'starPoints'},
-        animated: { value: true, label: 'animated?'},
-        followMouse: { value: false, label: 'followMouse?'},
-        anamorphic: { value: false, label: 'anamorphic?'},
-        colorGain: { value: new Color(56, 22, 11), label: 'colorGain'},
 
-        Flare: folder({
-          flareSpeed: { value: 0.4, step: 0.001, min: 0.0, max: 1.0, label: 'flareSpeed'},
-          flareShape: { value: 0.1, step: 0.001, min: 0.0, max: 1.0, label: 'flareShape'},
-          flareSize: { value: 0.005, step: 0.001, min: 0.0, max: 0.01, label: 'flareSize'}
-        }),
+#### All parameters are self-explanatory. However, it's important to note some key details about certain parameters.
 
-        SecondaryGhosts: folder({
-          secondaryGhosts: { value: true, label: 'secondaryGhosts?'},
-          ghostScale: { value: 0.1, min: 0.01, max: 1.0, label: 'ghostScale'},
-          aditionalStreaks: { value: true, label: 'aditionalStreaks?'}
-        }),
-
-        StartBurst: folder({
-          starBurst: { value: true, label: 'starBurst?'},
-          haloScale: { value: 0.5, step: 0.01, min: 0.3, max: 1.0}
-        })
-      },
-      { collapsed: true}
-    )
-  })
-```
+| Parameter       | Explanation                       |
+| :-------------- | :-------------------------------- |
+| colorGain       | Only accecpts RGB color format    |
+| followMouse     | Can't work with occlusion         |
+| anamorphic      | You need to tung of animation     |
+| dirtTextureFile | Can be changed to another texture |
 
 # Ignoring occlusion on some objects
 
-If, for some reason, you need to disable the occlusion effect, for Eg: to fake a skybox like I'm doing in some of my demos, you can add `userData={{ lensflare: 'no-occlusion' }}` to any object/mesh. This will tell to Ultimate Lens Flare's internal raycaster to ignore that specific object/mesh.
+To disable the occlusion effect, simply add `userData={{ lensflare: 'no-occlusion' }}` to your object/mesh. This feature is particularly useful for creating realistic skyboxes in demos. By utilizing this setting, the internal raycaster of Ultimate Lens Flare will exclude the designated object/mesh from occlusion calculations.
 
 # Improving performance with BHV
 
-This effect uses Raycaster to detect the occlusion. It is important to use `<bvh><Scene></bvh>` to get a faster response and a better performance when using it.
+For optimal performance, it's crucial to employ the `<bvh><Scene></bvh>` structure when utilizing this occlusion detection effect. This setup ensures a faster response time and enhances overall performance.
 
-If you face any performance issues, you can get some performance back by controling the `dpr` and disabling the `multisampliing` on the `EffectComposer` if you can.
+In the event of performance challenges, consider adjusting the `dpr` (device pixel ratio) and disabling `multisampling` on the EffectComposer, if feasible. These adjustments can help reclaim performance resources and improve the overall experience.
 
 # Follow the mouse cursor or Fake Sun Vector Position
 
@@ -150,9 +159,9 @@ You can also use a position `{x: NUMBER, y: NUMBER, z: NUMBER}` to pass a positi
 
 # Limitations
 
-The Ultimate Lens Flare uses the raycaster to check for material type and determine if it is MeshTransmissionMaterial or MeshPhysicalMaterial and check for the transmission parameter. This means that, to act like a glass, your materials needs to have `transmission = 1` or `transparent = true + opacity = 0.X`. The effect will read the opacity value to determine its brightness automatically.
+The Ultimate Lens Flare leverages the raycaster to examine the material type of objects and determine if they are `MeshTransmissionMaterial` or `MeshPhysicalMaterial`. It checks for the transmission parameter to identify glass-like materials. Therefore, for an object to behave like glass, its material should have either `transmission = 1` or `transparent = true` and `opacity = NUMBER`. The effect automatically interprets the opacity `NUMBER` value to determine the brightness of the flare.
 
-The internal raycaster is set to read just the firstHit of the raycaster, meaning that if the first detected object is not transparent nor transmissive, it will occlude the effect.
+Furthermore, the internal raycaster is configured to consider only the firstHit of the raycaster. This means that if the first detected object is neither transparent nor transmissive, it will occlude the effect.
 
 # Getting Started using this demo project
 
@@ -178,7 +187,7 @@ A CC0 license is used for this project. You can do whatever you want with it, no
 
 # Can you leave a star please?
 
-Would be really appreciated if you are willing to give me a star here on GitHub 🎉 or buy me a coffee ☕ https://www.buymeacoffee.com/andersonmancini. The money will be used to produce more content about threejs or to buy new courses.
+I genuinely appreciate your support! If you're willing to show your appreciation, you can <strong>give me a star on GitHub 🎉 </strong>or consider buying a coffee to support my development at https://www.buymeacoffee.com/andersonmancini. The funds received will be utilized to create more valuable content about Three.js and invest in acquiring new courses. Thank you for your consideration!
 
 # Credits
 
