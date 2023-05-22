@@ -1,16 +1,18 @@
 import { Canvas } from '@react-three/fiber'
 import LensFlare from './effects/UltimateLensFlare'
-import { Environment, Loader, OrbitControls } from '@react-three/drei'
+import { Environment, Loader, OrbitControls, PerformanceMonitor } from '@react-three/drei'
 import Overlay from './components/Overlay'
 import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing'
 import { folder, useControls } from 'leva'
 import { Color } from 'three'
 import Scene from './components/Scene'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { BlendFunction } from 'postprocessing'
 import { isMobile } from 'mobile-device-detect';
 
 export default function App() {
+  const [dpr, setDpr] = useState(1.5)
+
   const lensFlareProps = useControls({
     LensFlare: folder(
       {
@@ -37,7 +39,7 @@ export default function App() {
         }),
 
         StartBurst: folder({
-          starBurst: { value: true, label: 'starBurst?'},
+          starBurst: { value: isMobile ? false : true, label: 'starBurst?'},
           haloScale: { value: 0.5, step: 0.01, min: 0.3, max: 1.0}
         })
       },
@@ -47,9 +49,9 @@ export default function App() {
 
   return (
     <>
-      <Canvas dpr={1} gl={{alpha:false, powerPreference: "high-performance", stencil: false, antialias: false, depth: false }} camera={{ position: [8, 1, 10], near: 0.5, fov: isMobile ? 80 : 45 }}>
+      <Canvas dpr={dpr} gl={{alpha:false, powerPreference: "high-performance", stencil: false, antialias: false, depth: false }} camera={{ position: [8, 1, 10], near: 0.5, fov: isMobile ? 80 : 45 }}>
 
-
+        <PerformanceMonitor onIncline={() => setDpr(1)} onDecline={() => setDpr(0.6)} />
         <OrbitControls autoRotate autoRotateSpeed={0.3} zoomSpeed={4} maxDistance={60} />
         <directionalLight intensity={3} position={[-25, 60, -60]} />
 
