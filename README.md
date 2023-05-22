@@ -133,11 +133,13 @@ const lensFlareProps = useControls({
 
 To disable the occlusion effect, simply add `userData={{ lensflare: 'no-occlusion' }}` to your object/mesh. This feature is particularly useful for creating realistic skyboxes in demos. By utilizing this setting, the internal raycaster of Ultimate Lens Flare will exclude the designated object/mesh from occlusion calculations.
 
-# Improving performance with BHV
+# Improving performance
 
 For optimal performance, it's crucial to employ the `<bvh><Scene></bvh>` structure when utilizing this occlusion detection effect. This setup ensures a faster response time and enhances overall performance.
 
 In the event of performance challenges, consider adjusting the `dpr` (device pixel ratio) and disabling `multisampling` on the EffectComposer, if feasible. These adjustments can help reclaim performance resources and improve the overall experience.
+
+⚠️ The `StarBurst` option is very intense for some GPU's to compute. If you have any issues with the performance, you can disable it. You can also use this drei component https://github.com/pmndrs/drei#performancemonitor to automatically disable this parameter when the performance drops.
 
 # Follow the mouse cursor or Fake Sun Vector Position
 
