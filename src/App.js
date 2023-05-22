@@ -7,6 +7,7 @@ import { folder, useControls } from 'leva'
 import { Color } from 'three'
 import Scene from './components/Scene'
 import { Suspense } from 'react'
+import { BlendFunction } from 'postprocessing'
 
 export default function App() {
   const lensFlareProps = useControls({
@@ -45,19 +46,19 @@ export default function App() {
 
   return (
     <>
-      <Canvas dpr={1} gl={{ powerPreference: "high-performance", stencil: false, antialias: false, depth: false }} camera={{ position: [8, 0, 10], near: 0.5, fov: 45 }}>
-        <EffectComposer multisampling={false} disableNormalPass>
-          <Vignette />
-          <Bloom mipmapBlur radius="0.9" luminanceThreshold="0.966" intensity="2" levels="4" />
-          <LensFlare {...lensFlareProps} dirtTextureFile={'/lensDirtTexture.png'} /> {/* Just instanciate like this */}
-        </EffectComposer>
+      <Canvas dpr={1} gl={{alpha:false, powerPreference: "high-performance", stencil: false, antialias: false, depth: false }} camera={{ position: [8, 1, 10], near: 0.5, fov: 45 }}>
+
 
         <OrbitControls autoRotate autoRotateSpeed={0.3} zoomSpeed={4} maxDistance={60} />
         <directionalLight intensity={3} position={[-25, 60, -60]} />
 
         <Suspense fallback={null}>
-          <Environment files="/background.hdr" background />
           <Scene />
+          <EffectComposer multisampling={false} disableNormalPass>
+          <Vignette />
+          <Bloom mipmapBlur radius="0.9" luminanceThreshold="0.966" intensity="2" levels="4" />
+          <LensFlare {...lensFlareProps} dirtTextureFile={'/lensDirtTexture.png'} /> {/* Just instanciate like this */}
+        </EffectComposer>
         </Suspense>
       </Canvas>
       <Loader />

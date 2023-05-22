@@ -17,7 +17,7 @@ export default function Scene(props) {
             position={[-0.85, 2.4, 0]}>
             LENS
           </Text>
-          <Text color={'BLACK'} letterSpacing={-0.05} font="/Inter-Bold.woff" fontSize={3}>
+          <Text   userData={{ lensflare: 'no-occlusion' }} color={'BLACK'} letterSpacing={-0.05} font="/Inter-Bold.woff" fontSize={3}>
             FLARE
           </Text>
         </Billboard>

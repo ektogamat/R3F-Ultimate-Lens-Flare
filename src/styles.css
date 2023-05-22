@@ -19,13 +19,34 @@ body {
 }
 
 .container {
-  bottom: 4%;
+  bottom: 15%;
   left: 50%;
   margin: 0;
   padding: 0;
-  transform: translate(-50%, 60px);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   position: absolute;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 9px;
+  padding: 20px 70px;
+  font-size: 1.2em;
+  letter-spacing: -0.2px;
+  pointer-events: all;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+button:hover {
+  color: white;
+  background-color: black;
+  transform: scale(1.05);
 }
 
 h1 {
@@ -42,12 +63,11 @@ h1 {
 h3 {
   font-family: 'Roboto', sans-serif;
   font-size: 1.65vw;
+  -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
   position: relative;
-  bottom: 60px;
-  left: 0.8%;
-  line-height: 0em;
+  line-height: 3em;
   font-weight: 100;
   color: white;
 }

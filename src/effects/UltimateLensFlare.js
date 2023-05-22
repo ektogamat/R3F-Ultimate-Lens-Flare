@@ -115,7 +115,7 @@ const LensFlare = wrapEffect(LensFlareEffect)
 
 function Effects({
   position = { x: -25, y: 6, z: -60 },
-  blendFunction=BlendFunction.NORMAL, 
+  blendFunction = BlendFunction.NORMAL,
   glareSize = 0.35,
   followMouse,
   starPoints = 6.0,
@@ -140,7 +140,7 @@ function Effects({
   let flarePosition = new Vector3()
 
   const { viewport, raycaster } = useThree()
-  const lensDirtTexture =  useTexture(dirtTextureFile)
+  const lensDirtTexture = useTexture(dirtTextureFile)
 
   let projectedPosition
 
@@ -190,49 +190,65 @@ function Effects({
               easing.damp(lensRef.current.uniforms.get('opacity'), 'value', 1.0, 0.07, delta)
             }
           }
+        } else {
+          easing.damp(lensRef.current.uniforms.get('opacity'), 'value', 0.0, 0.07, delta)
         }
 
         lensRef.current.uniforms.get('lensPosition').value.x = flarePosition.x
         lensRef.current.uniforms.get('lensPosition').value.y = flarePosition.y
-
       }
-      
     }
   })
 
-  useEffect(()=>{
+  useEffect(() => {
     lensRef.current.uniforms.get('iResolution').value.x = viewport.width
     lensRef.current.uniforms.get('iResolution').value.y = viewport.height
   }, [viewport])
 
-  return useMemo(()=>
+  return useMemo(
+    () => (
       <LensFlare
-          ref={lensRef}
-          iResolution={{ x: viewport.width, y: viewport.height }}
-          blendFunction={blendFunction}
-          lensDirtTexture={lensDirtTexture}
-          glareSize={glareSize}
-          starPoints={starPoints}
-          flareSize={flareSize}
-          flareSpeed={flareSpeed}
-          flareShape={flareShape}
-          animated={animated}
-          anamorphic={anamorphic}
-          colorGain={colorGain}
-          haloScale={haloScale}
-          secondaryGhosts={secondaryGhosts}
-          aditionalStreaks={aditionalStreaks}
-          ghostScale={ghostScale}
-          starBurst={starBurst}
-          enabled={enabled}
-          opacity={opacity}
-        />
-    
-      ,[glareSize, blendFunction, starPoints, flareSize, flareSpeed, flareShape, animated,
-      anamorphic, colorGain, haloScale, secondaryGhosts, aditionalStreaks, ghostScale, starBurst, enabled, opacity])
+        ref={lensRef}
+        iResolution={{ x: viewport.width, y: viewport.height }}
+        blendFunction={blendFunction}
+        lensDirtTexture={lensDirtTexture}
+        glareSize={glareSize}
+        starPoints={starPoints}
+        flareSize={flareSize}
+        flareSpeed={flareSpeed}
+        flareShape={flareShape}
+        animated={animated}
+        anamorphic={anamorphic}
+        colorGain={colorGain}
+        haloScale={haloScale}
+        secondaryGhosts={secondaryGhosts}
+        aditionalStreaks={aditionalStreaks}
+        ghostScale={ghostScale}
+        starBurst={starBurst}
+        enabled={enabled}
+        opacity={opacity}
+      />
+    ),
+
+    [
+      glareSize,
+      blendFunction,
+      starPoints,
+      flareSize,
+      flareSpeed,
+      flareShape,
+      animated,
+      anamorphic,
+      colorGain,
+      haloScale,
+      secondaryGhosts,
+      aditionalStreaks,
+      ghostScale,
+      starBurst,
+      enabled,
+      opacity
+    ]
+  )
 }
 
 export default Effects
-
-
-  
