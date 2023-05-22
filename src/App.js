@@ -8,6 +8,7 @@ import { Color } from 'three'
 import Scene from './components/Scene'
 import { Suspense } from 'react'
 import { BlendFunction } from 'postprocessing'
+import { isMobile } from 'mobile-device-detect';
 
 export default function App() {
   const lensFlareProps = useControls({
@@ -46,7 +47,7 @@ export default function App() {
 
   return (
     <>
-      <Canvas dpr={1} gl={{alpha:false, powerPreference: "high-performance", stencil: false, antialias: false, depth: false }} camera={{ position: [8, 1, 10], near: 0.5, fov: 45 }}>
+      <Canvas dpr={1} gl={{alpha:false, powerPreference: "high-performance", stencil: false, antialias: false, depth: false }} camera={{ position: [8, 1, 10], near: 0.5, fov: isMobile ? 80 : 45 }}>
 
 
         <OrbitControls autoRotate autoRotateSpeed={0.3} zoomSpeed={4} maxDistance={60} />

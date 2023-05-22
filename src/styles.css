@@ -93,3 +93,36 @@ h2 > a {
 h2 > a:hover {
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  button {
+    padding: 20px 30px;
+    width: 250px;
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    text-align: center;
+    width: 240px;
+    opacity: 0.8;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  h2 > a {
+    bottom: 2%;
+    top: unset;
+    position: absolute;
+    font-size: 0.7em;
+    width: 100%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
