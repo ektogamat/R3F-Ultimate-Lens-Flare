@@ -1,18 +1,19 @@
 {
   "name": "example",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "deploy": "vercel deploy --prod",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@andersonmancini/lens-flare": "file:../package/lens-flare",
     "@react-three/drei": "9.58.5",
     "@react-three/fiber": "^8.13.0",
-    "@react-three/postprocessing": "2.13.0",
+    "@react-three/postprocessing": "2.8.2",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "leva": "0.9.31",
@@ -22,5 +23,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "three": "^0.152.2"
+  },
+  "devDependencies": {
+    "vercel": "^30.0.0"
   }
 }

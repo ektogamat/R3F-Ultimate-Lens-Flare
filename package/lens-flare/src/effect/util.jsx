@@ -4,15 +4,11 @@ import React, { forwardRef, useMemo, useLayoutEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { BlendFunction } from "postprocessing";
 
-const isRef = (ref) => !!ref.current;
-
-export const resolveRef = (ref) => (isRef(ref) ? ref.current : ref);
-
-export const wrapEffect = (
+const wrapEffect = (
   effectImpl,
   defaultBlendMode = BlendFunction.NORMAL
 ) =>
-  forwardRef(function Wrap({ blendFunction, opacity, ...props }, ref) {
+  forwardRef(({ blendFunction, opacity, ...props }, ref) => {
     const invalidate = useThree((state) => state.invalidate);
     const effect = useMemo(() => new effectImpl(props), [props]);
 
@@ -24,5 +20,7 @@ export const wrapEffect = (
       if (opacity !== undefined) effect.blendMode.opacity.value = opacity;
       invalidate();
     }, [blendFunction, effect.blendMode, opacity]);
-    return <primitive ref={ref} object={effect} dispose={null} />;
+    return <primitive  object={effect} ref={ref} dispose={null} />;
   });
+
+export { wrapEffect }

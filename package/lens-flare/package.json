@@ -1,33 +1,23 @@
 {
   "name": "@andersonmancini/lens-flare",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
   "scripts": {
-    "build": "npm run clean && node ./esbuild.build.js",
+    "build": "node ./esbuild.build.js",
     "clean": "rm -rf ./dist",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "postprocessing": "^6.31.0"
+    "postversion": "git push origin v$npm_package_version",
+    "prebuild": "npm run clean"
   },
   "devDependencies": {
     "@react-three/drei": "^9.58.5",
     "@react-three/fiber": "^8.13.0",
-    "@vitejs/plugin-react": "^4.0.0",
     "esbuild": "^0.17.19",
-    "esbuild-plugin-glob": "^2.2.1",
     "maath": "^0.5.3",
+    "postprocessing": "^6.31.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.152.2",
-    "vite": "^4.3.2"
+    "three": "^0.152.2"
   },
   "peerDependencies": {
     "@react-three/drei": "^9.58.5",

@@ -1,14 +1,15 @@
 // Created by Anderson Mancini 2023
 // React Three Fiber Ultimate LensFlare
 // To be used Effect together with react-three/postprocessing
+import { useFrame, useThree } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
+import { easing } from 'maath';
+import { BlendFunction, Effect } from 'postprocessing';
+import { useRef, useMemo, useEffect, forwardRef, useLayoutEffect } from 'react';
+import { Uniform, Color, Vector3 } from 'three';
 
-import { Uniform, Color, Vector3 } from 'three'
-import { BlendFunction, Effect } from 'postprocessing'
-import { wrapEffect } from './util.jsx'
-import { useRef, useMemo, useEffect } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
-import { useTexture } from '@react-three/drei'
-import { easing } from 'maath'
+import { wrapEffect } from './util';
+
 
 const LensFlareShader = {
   fragmentShader: /* glsl */ `
@@ -111,8 +112,6 @@ export class LensFlareEffect extends Effect {
   }
 }
 
-const LensFlare = wrapEffect(LensFlareEffect)
-
 function Effects({
   position = { x: -25, y: 6, z: -60 },
   blendFunction = BlendFunction.NORMAL,
@@ -134,7 +133,9 @@ function Effects({
   enabled = true,
   opacity = 1.0
 }) {
-  const lensRef = useRef()
+  const lensRef = useRef();
+
+  const LensFlare = wrapEffect(LensFlareEffect);
 
   const screenPosition = new Vector3(position.x, position.y, position.z)
   let flarePosition = new Vector3()

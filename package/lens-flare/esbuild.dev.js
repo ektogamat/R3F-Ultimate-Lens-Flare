@@ -14,7 +14,6 @@ const sharedConfig = {
   target: ["esnext"],
   logLevel: "debug",
   external: [...Object.keys(packagejson.peerDependencies || {})],
-  watch: true,
 };
 
 esbuild

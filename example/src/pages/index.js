@@ -117,11 +117,11 @@ const App = () => {
               intensity="2"
               levels="4"
             />
-            {/* Just instanciate like this :) */}
             <LensFlare
               {...lensFlareProps}
               dirtTextureFile={"/lensDirtTexture.png"}
             />
+            {/* Just instanciate like this */}
           </EffectComposer>
         </Suspense>
       </Canvas>
