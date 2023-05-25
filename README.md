@@ -33,6 +33,30 @@ Here you can watch a video of customization options. You can fully customize it
 
 # HOW TO USE?
 
+## With the package
+
+First, install the `@andersonmancini/lens-flare` package on your project
+
+```shell
+npm install @andersonmancini/lens-flare
+```
+
+Then, import it in your project:
+
+```js
+import LensFlare from "@andersonmancini/lens-flare";
+```
+
+and add it to your `EffectComposer`:
+
+```js
+<EffectComposer>
+  <LensFlare dirtTextureFile={"/lensDirtTexture.png"} />
+</EffectComposer>
+```
+
+## Manually
+
 ### 1. Download the files component and save it on your project
 
 [Download the Ultimate Lens Flare source code](https://gist.github.com/ektogamat/9b02bf248cab901b1175524b00742964) and save into your project
@@ -42,7 +66,7 @@ Here you can watch a video of customization options. You can fully customize it
 ### 2. Import the component
 
 ```js
-import LensFlare from './UltimateLensFlare'
+import LensFlare from "./UltimateLensFlare";
 // Remember to adjust the path to match your project's structure
 ```
 
@@ -52,7 +76,7 @@ You need to <strong>provide an image to act like a lens dirt filter</strong>. To
 
 ```js
 <EffectComposer>
-  <LensFlare dirtTextureFile={'/lensDirtTexture.png'} />
+  <LensFlare dirtTextureFile={"/lensDirtTexture.png"} />
 </EffectComposer>
 ```
 
@@ -70,7 +94,10 @@ Nevertheless, you have the flexibility to customize the effect to suit your spec
 
 ```js
 <EffectComposer>
-  <LensFlare dirtTextureFile={'/lensDirtTexture.png'} blendFunction={BlendFunction.PIN_LIGHT} />
+  <LensFlare
+    dirtTextureFile={"/lensDirtTexture.png"}
+    blendFunction={BlendFunction.PIN_LIGHT}
+  />
 </EffectComposer>
 ```
 
@@ -81,43 +108,67 @@ Unlock a world of stunning and diverse outcomes by exploring alternative Blend f
 Enjoy the convenience of fine-tuning various parameters within Ultimate Lens Flare. To simplify the process, import `folder` and `useControls` from `LEVA`. Copy and paste the following props to create an interactive interface for adjusting the values. Once you're satisfied with the results, manually transfer the values from the Leva controls back to the default value of useControls. Save your changes, and you're all set!
 
 ```js
-import { folder, useControls } from 'leva'
+import { folder, useControls } from "leva";
 ```
 
 ```js
 const lensFlareProps = useControls({
   LensFlare: folder(
     {
-      enabled: { value: true, label: 'enabled?' },
-      opacity: { value: 1.0, min: 0.0, max: 1.0, label: 'opacity' },
-      position: { value: { x: -25, y: 6, z: -60 }, step: 1, label: 'position' },
-      glareSize: { value: 0.35, min: 0.01, max: 1.0, label: 'glareSize' },
-      starPoints: { value: 6.0, step: 1.0, min: 0, max: 32.0, label: 'starPoints' },
-      animated: { value: true, label: 'animated?' },
-      followMouse: { value: false, label: 'followMouse?' },
-      anamorphic: { value: false, label: 'anamorphic?' },
-      colorGain: { value: new Color(56, 22, 11), label: 'colorGain' },
+      enabled: { value: true, label: "enabled?" },
+      opacity: { value: 1.0, min: 0.0, max: 1.0, label: "opacity" },
+      position: { value: { x: -25, y: 6, z: -60 }, step: 1, label: "position" },
+      glareSize: { value: 0.35, min: 0.01, max: 1.0, label: "glareSize" },
+      starPoints: {
+        value: 6.0,
+        step: 1.0,
+        min: 0,
+        max: 32.0,
+        label: "starPoints",
+      },
+      animated: { value: true, label: "animated?" },
+      followMouse: { value: false, label: "followMouse?" },
+      anamorphic: { value: false, label: "anamorphic?" },
+      colorGain: { value: new Color(56, 22, 11), label: "colorGain" },
 
       Flare: folder({
-        flareSpeed: { value: 0.4, step: 0.001, min: 0.0, max: 1.0, label: 'flareSpeed' },
-        flareShape: { value: 0.1, step: 0.001, min: 0.0, max: 1.0, label: 'flareShape' },
-        flareSize: { value: 0.005, step: 0.001, min: 0.0, max: 0.01, label: 'flareSize' },
+        flareSpeed: {
+          value: 0.4,
+          step: 0.001,
+          min: 0.0,
+          max: 1.0,
+          label: "flareSpeed",
+        },
+        flareShape: {
+          value: 0.1,
+          step: 0.001,
+          min: 0.0,
+          max: 1.0,
+          label: "flareShape",
+        },
+        flareSize: {
+          value: 0.005,
+          step: 0.001,
+          min: 0.0,
+          max: 0.01,
+          label: "flareSize",
+        },
       }),
 
       SecondaryGhosts: folder({
-        secondaryGhosts: { value: true, label: 'secondaryGhosts?' },
-        ghostScale: { value: 0.1, min: 0.01, max: 1.0, label: 'ghostScale' },
-        aditionalStreaks: { value: true, label: 'aditionalStreaks?' },
+        secondaryGhosts: { value: true, label: "secondaryGhosts?" },
+        ghostScale: { value: 0.1, min: 0.01, max: 1.0, label: "ghostScale" },
+        aditionalStreaks: { value: true, label: "aditionalStreaks?" },
       }),
 
       StartBurst: folder({
-        starBurst: { value: true, label: 'starBurst?' },
+        starBurst: { value: true, label: "starBurst?" },
         haloScale: { value: 0.5, step: 0.01, min: 0.3, max: 1.0 },
       }),
     },
     { collapsed: true }
   ),
-})
+});
 ```
 
 #### All parameters are self-explanatory. However, it's important to note some key details about certain parameters.
@@ -171,15 +222,45 @@ Download and install Node.js on your computer (https://nodejs.org/en/download/).
 
 Then, open VSCODE, drag the project folder to it. Open VSCODE terminal and install dependencies (you need to do this only in the first time)
 
-```
+```shell
 npm install
 ```
 
-Run this command in your terminal to open a local server at localhost:8080
+Run this command in your terminal to open a local server at localhost:3000
 
+```shell
+turbo start
 ```
-npm start
+
+# How to contribute
+
+1. Install the dependency from the root of the project
+
+```shell
+npm install
 ```
+
+2. Start the project in dev mode
+
+```shell
+turbo dev
+```
+
+This will start the package in "dev mode" along with the example at `http://localhost:3000`
+
+3. Edit the code of the package in `package/lens-flare`. The lens flare effect itself is defined under `package/lens-flare/src/effect/LensFlare.jsx`.
+
+4. Every update made to the LensFlare effect should immediately be reflected on the example website.
+
+5. To try a build of the package run:
+
+```shell
+turbo start
+```
+
+This will bundle `@andersonmancini/lens-flare` and do a production build of the example and serve the resulting build at `http://localhost:3000`
+
+6. Submit a pull request for review with your changes!
 
 <hr/>
 
