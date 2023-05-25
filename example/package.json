@@ -1,0 +1,26 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@andersonmancini/lens-flare": "file:../package/lens-flare",
+    "@react-three/drei": "9.58.5",
+    "@react-three/fiber": "^8.13.0",
+    "@react-three/postprocessing": "2.13.0",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "leva": "0.9.31",
+    "maath": "^0.5.3",
+    "mobile-device-detect": "^0.4.3",
+    "next": "13.4.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.152.2"
+  }
+}
