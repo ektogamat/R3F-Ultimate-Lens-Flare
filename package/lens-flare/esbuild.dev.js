@@ -4,7 +4,7 @@ const packagejson = require("./package.json");
 const sharedConfig = {
   loader: {
     ".jsx": "jsx",
-    ".ts": "jsx",
+    ".js": "jsx",
   },
   entryPoints: ["src/index.jsx"],
   outbase: "./src",
@@ -16,26 +16,18 @@ const sharedConfig = {
   external: [...Object.keys(packagejson.peerDependencies || {})],
 };
 
-esbuild
-  .build({
-    ...sharedConfig,
-    outdir: "dist/cjs",
-    sourcemap: true,
-    format: "cjs",
-    banner: {
-      js: "const { createElement, Fragment } = require('react');\n",
-    },
-  })
-  .catch(() => process.exit(1));
-
-esbuild
-  .build({
+const watch = async () => {
+  const context = await esbuild.context({
     ...sharedConfig,
     outdir: "dist/esm",
     sourcemap: true,
     format: "esm",
     banner: {
-      js: "import { createElement, Fragment } from 'react';\n",
+      js: "const { createElement, Fragment } = require('react');\n",
     },
-  })
-  .catch(() => process.exit(1));
+  });
+
+  await context.watch();
+};
+
+watch();
