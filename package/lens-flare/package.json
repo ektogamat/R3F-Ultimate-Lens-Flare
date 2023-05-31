@@ -7,7 +7,6 @@
     "dev": "node ./esbuild.dev.js",
     "build": "node ./esbuild.build.js",
     "clean": "rm -rf ./dist",
-    "postversion": "git push origin v$npm_package_version",
     "prebuild": "npm run clean",
     "predev": "npm run clean"
   },

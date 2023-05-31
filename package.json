@@ -7,5 +7,14 @@
   ],
   "devDependencies": {
     "turbo": "1.9.8"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "build": "turbo build",
+    "build:package": "turbo build --filter=@andersonmancini/lens-flare",
+    "build:example": "turbo build --filter=example",
+    "publish": "cd package/lens-flare && npm publish --access=public",
+    "version": "cd package/lens-flare && npm version"
   }
 }

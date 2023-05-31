@@ -229,7 +229,7 @@ npm install
 Run this command in your terminal to open a local server at localhost:3000
 
 ```shell
-turbo start
+npm run start
 ```
 
 # How to contribute
@@ -243,7 +243,7 @@ npm install
 2. Start the project in dev mode
 
 ```shell
-turbo dev
+npm run dev
 ```
 
 This will start the package in "dev mode" along with the example at `http://localhost:3000`
@@ -255,7 +255,7 @@ This will start the package in "dev mode" along with the example at `http://loca
 5. To try a build of the package run:
 
 ```shell
-turbo start
+npm run start
 ```
 
 This will bundle `@andersonmancini/lens-flare` and do a production build of the example and serve the resulting build at `http://localhost:3000`
