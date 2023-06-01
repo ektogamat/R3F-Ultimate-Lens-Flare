@@ -1,35 +1,20 @@
 {
-  "name": "anderson-mancini-lens-flare-simple-example",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.js",
-  "dependencies": {
-    "@react-three/drei": "9.58.4",
-    "@react-three/fiber": "8.12.0",
-    "@react-three/postprocessing": "2.7.1",
-    "@types/three": "0.144.0",
-    "leva": "0.9.31",
-    "maath": "0.5.3",
-    "mobile-device-detect": "^0.4.3",
-    "postprocessing": "6.30.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-scripts": "5.0.1",
-    "three": "0.151.3",
-    "vercel": "^29.3.6"
+  "name": "lens-flare",
+  "packageManager": "npm@8.1.2",
+  "workspaces": [
+    "example",
+    "package/lens-flare"
+  ],
+  "devDependencies": {
+    "turbo": "1.9.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "deploy": "vercel --prod"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "build": "turbo build",
+    "build:package": "turbo build --filter=@andersonmancini/lens-flare",
+    "build:example": "turbo build --filter=example",
+    "publish": "cd package/lens-flare && npm publish --access=public",
+    "version": "cd package/lens-flare && npm version"
+  }
 }

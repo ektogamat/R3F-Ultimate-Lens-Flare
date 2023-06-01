@@ -1,0 +1,32 @@
+{
+  "name": "@andersonmancini/lens-flare",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "dev": "node ./esbuild.dev.js",
+    "build": "node ./esbuild.build.js",
+    "clean": "rm -rf ./dist",
+    "prebuild": "npm run clean",
+    "predev": "npm run clean"
+  },
+  "devDependencies": {
+    "@react-three/drei": "^9.58.5",
+    "@react-three/fiber": "^8.13.0",
+    "esbuild": "^0.17.19",
+    "maath": "^0.5.3",
+    "postprocessing": "^6.31.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.152.2"
+  },
+  "peerDependencies": {
+    "@react-three/drei": "^9.58.5",
+    "@react-three/fiber": "^8.13.0",
+    "maath": "^0.5.3",
+    "postprocessing": "^6.31.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.152.2"
+  }
+}
