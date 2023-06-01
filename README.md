@@ -44,7 +44,7 @@ npm install @andersonmancini/lens-flare
 Then, import it in your project:
 
 ```js
-import LensFlare from "@andersonmancini/lens-flare";
+import { LensFlare } from "@andersonmancini/lens-flare";
 ```
 
 and add it to your `EffectComposer`:
