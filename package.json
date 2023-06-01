@@ -6,7 +6,8 @@
     "package/lens-flare"
   ],
   "devDependencies": {
-    "turbo": "1.9.8"
+    "turbo": "1.9.8",
+    "vercel": "^30.0.0"
   },
   "scripts": {
     "dev": "turbo dev",
